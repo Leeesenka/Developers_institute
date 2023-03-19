@@ -23,7 +23,8 @@ img {
     border: 5px solid red;
     margin-top: 40px;
     height: 400px;
-    max-width: auto;
+    width: auto;
+   
 
 
 }
