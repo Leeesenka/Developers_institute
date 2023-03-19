@@ -1,0 +1,171 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+.header_1 {
+    height: 55px;
+    display: flex;
+    position: fixed;
+    background-color: white;
+    justify-content: space-between;
+    width: 100%;
+}
+.header_1 p {
+    margin: 15px;
+    margin-left: 10%;
+    font-size: 18px;
+}
+
+.header_1 button {
+    margin: 15px;
+    margin-right: 10%;
+    font-size: 12px;
+    height: 25px;
+    width: 55px;
+    text-align: center;
+    display: block;
+  
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #1E90FF;
+    color: white;
+
+
+}
+
+
+.main {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    background-image: url("pexels-photo-1435752.jpeg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+
+}
+.table-big {
+    margin: 5%;
+    
+    
+
+}
+
+.table-text {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 90px;
+    width: 500px;
+   text-align: center;
+    font-size: 28px;
+    color: white;
+
+
+}
+.table-form {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin: 40px;
+ 
+    justify-content: center;
+
+}
+form {
+    display: block;
+    margin: 10px;
+
+    width: 320px;
+    height: 35px;
+ 
+    
+    
+
+}
+input {
+    display: block;
+    align-items: center;
+    font-size: 16px;
+   color: gray;
+    height: 30px;
+
+    
+}
+button {
+    display: block;
+
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    background-color: #1E90FF;
+    height: 35px;
+     width: 75px;
+  margin: 10px;
+  border-radius: 4px;
+
+}
+.main2 {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+   
+}
+.cont1, .cont2, .cont3 {
+    display: block;
+   
+    height: 170px;
+    width: 230px;
+    margin: 40px;
+    margin-top: 100px;
+}
+.cont1  i {
+    font-size: 60px;
+    color: #1E90FF;
+    text-align: center;
+    display: block;
+    margin: 15px;   
+}
+
+.cont2  i {
+    font-size: 60px;
+    color: #1E90FF;
+    text-align: center;
+    display: block;
+    margin: 15px;}
+
+.cont3  i {
+        font-size: 60px;
+        color: #1E90FF;
+        text-align: center;
+        display: block;
+        margin: 15px;}   
+
+
+.text-under-photo {
+    display: block;
+    text-align: center;
+   
+}
+.text-under-photo2 {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    margin: 10px;
+}
+
+.cont2 {
+   
+}
+
+.cont3 {
+    
+}
