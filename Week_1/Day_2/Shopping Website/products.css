@@ -200,7 +200,7 @@ margin: 10px;
     padding: 5px;
 }
 
-.holder2 i {
+/* .holder2 i {
     position: absolute;
     display: block;
     color: black;
@@ -214,25 +214,8 @@ margin: 10px;
 
 .photo1 img:hover .holder i{
     display:block;
-}
+} */
 
 
-@media only screen (min-width: 1024px) {
-    .main {
-        width: 100%;
-    }
-}
-
-@media only screen (min-width: 768px) {
-    .photo1 {
-        width: 75%;
-    }
- }
-
- @media only screen (min-width: 480px) and (max-width: 768px) { 
-    .photo1 {
-        width: 50%;
-    }
-}
 
 
