@@ -110,8 +110,11 @@ h3 {
 .photo1 h3, p {
     text-align: center;
     margin: 10px;
-    
+   
 
+}
+.photo1 p {
+    color: green;
 }
 .photo1 h3 {
    margin-right: 5px;
@@ -200,6 +203,10 @@ margin: 10px;
     padding: 5px;
 }
 
+s {
+    font-size: 12px;
+    color: gray;
+}
 /* .holder2 i {
     position: absolute;
     display: block;
