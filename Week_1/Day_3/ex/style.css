@@ -1,0 +1,31 @@
+.p {
+    height:100px;
+    width: 100px;
+    margin: 5px;
+
+}
+.container {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-content: space-around;
+    /* flex-flow: column wrap; */
+    height: 500px; 
+    /* justify-content: space-evenly; */
+    align-items: ;
+
+
+/* }
+.p1 {
+    /* align-self: flex-start; */
+    
+/* flex: 1 0 0; */
+/* }
+.p2 {
+    /* order: -1px; */
+/* flex: 2;
+}
+.p3 {
+flex: 3;
+}
+.p {} */ */ */
