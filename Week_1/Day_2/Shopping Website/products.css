@@ -102,9 +102,6 @@ h3 {
 
 
 }
-.photo1 img:hover {
-   
-  }
 
 
 .photo1 h3, p {
@@ -181,7 +178,7 @@ margin: 10px;
 
 .holder i {
     position: absolute;
-    display: block;
+    display: none;
     color: black;
     background-color: white;
     font-size: 25px;
@@ -193,7 +190,7 @@ margin: 10px;
 
 .holder1 i {
     position: absolute;
-    display: block;
+    display: none;
     color: black;
     background-color: white;
     font-size: 25px;
@@ -207,7 +204,49 @@ s {
     font-size: 12px;
     color: gray;
 }
-/* .holder2 i {
+
+.holder2 i {
+    position: absolute;
+    display: none;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    right: 8px;
+    top: 70px;
+    
+   padding: 5px;
+}
+
+
+
+.photo1:hover .holder i {
+    position: absolute;
+    display: block;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    right: 85px;
+    top: 70px;
+ 
+    padding: 5px;
+}
+
+.photo1:hover .holder1 i {
+    position: absolute;
+    display: block;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+   left: 5px;
+    top: 70px;
+    
+    padding: 5px;
+    
+
+}
+
+.photo1:hover .holder2 i {
+
     position: absolute;
     display: block;
     color: black;
@@ -218,11 +257,4 @@ s {
     
    padding: 5px;
 }
-
-.photo1 img:hover .holder i{
-    display:block;
-} */
-
-
-
 
