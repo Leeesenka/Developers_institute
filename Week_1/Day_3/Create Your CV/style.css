@@ -3,7 +3,8 @@
     margin: 0;
 }
 .left-logo {
-    width: 30%;
+    width: 400px;
+  
 }
 .main {
     display: flex;
@@ -66,9 +67,21 @@ margin: 20px;
 }
 
 .photo {
-   height: 150px;
-   margin: 10px;
-   margin-top: 100px ;
+    display: flex;
+ 
+  
+   margin-top: 100px;
+   padding: 20px;
+   padding-left: 50px;
+   position: relative;
+flex-direction: row;
+justify-content: center;
+   
+}
+.photo img {
+    display: block;
+    border-radius: 150px;
+    width: 250px;
    
 }
 
