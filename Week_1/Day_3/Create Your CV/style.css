@@ -1,14 +1,22 @@
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0;
 }
 .left-logo {
     width: 400px;
+    background-color: bisque;
+    font-family: 'Ubuntu', sans-serif;
   
+}
+@media screen and (min-width: 768px) {
+    .left-logo {
+        background-color: #8FBC8F;
+    }
 }
 .main {
     display: flex;
     position: relative;
+    border: 1px solid gray;
 
 }
 
@@ -18,15 +26,17 @@
     position: relative;
     flex-direction: column;
     width: 800px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px solid gray;
 }
 .profile {
-height: 150px;
+
 margin: 10px;
-margin-top: 30px;
+margin-top: 60px;
 
 }
 .profile p {
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .education {
@@ -42,7 +52,7 @@ margin-top: 30px;
    flex-direction: column;
 }
 .sk {
-    margin: 10px;
+  
     display: flex;
     position: relative;
     flex-direction: row; 
@@ -71,6 +81,7 @@ margin: 20px;
  
   
    margin-top: 100px;
+   margin-bottom: 30px;
    padding: 20px;
    padding-left: 50px;
    position: relative;
@@ -89,18 +100,74 @@ justify-content: center;
     height: 150px;
     margin: 10px
 }
+.name h1 {
+    font-size: 50px;
+    text-align: center;
+}
+.name:hover {
+    color: white;
+}
 
 .market {
     height: 70px;
-    margin: 10px
+    margin: 10px;
+
+}
+.market h2 {
+    text-align: center;
+    display: none;
+}
+
+@media screen and (min-width:480px) {
+    .market h2 { display: block;
+    }
 }
 
 .info {
-    height: 200px;
-    margin: 10px
+  
+    margin: 10px;
+    margin-top: 30px;
+display: flex;
+margin-bottom: 30px;
+position: relative;
+flex-direction: column;
+text-align: center;
+    
 }
+.info p {
+margin: 10px;
+}
+.info l {
+    margin: 10px;
+    }
+
 
 .SS {
-    height: 300px;
-    margin: 10px
+    
+    margin: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+.in, .tw, .fb {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px;
+   
+}
+.in i, .tw i, .fb i {
+    font-size: 40px;
+    color: black;
+    
+}
+
+
+
+.in, .tw, .fb, a {
+    text-decoration: none;
+    color: black;
 }
