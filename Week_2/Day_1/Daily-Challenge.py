@@ -1,5 +1,5 @@
-print("Write string:")
-string = str(input("String="))
+import random 
+string = str(input("Write string="))
 print(len(string))
 
 
@@ -21,10 +21,10 @@ for char in string:
 
 
 
-import random
+
 string = list(string)
 random.shuffle(string)
-print(string)
+print(''.join(string))
 
 
 
