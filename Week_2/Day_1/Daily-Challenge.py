@@ -3,8 +3,10 @@ string = str(input("Write string="))
 print(len(string))
 
 
-if len(string) >= 10:
+if len(string) > 10:
     print("string too long")
+if len(string) == 10:
+    print("Good")    
 else: print("string not long enough")
 
 print(string)
