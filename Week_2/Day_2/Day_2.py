@@ -172,6 +172,24 @@ while True:
 # Price = 50
 # Say age your family: all
 
+# Exercise 9: (4)
+
+names = ["Alex", "Anna", "Nina", "Dor"]
+names_final = ["Alex", "Anna", "Nina", "Dor"]
+i = 0
+while i < len(names):
+    age = input("Hi," + names[i] + " say age: ")
+    if int(age) not in range(16,21):
+        names_final.remove(names[i])
+    i +=1
+print(names_final)
+
+# Hi,Alex say age: 6
+# Hi,Anna say age: 9
+# Hi,Nina say age: 17
+# Hi,Dor say age: 20
+# ['Nina', 'Dor']
+
 # Exercise 10 : Sandwich Orders
 sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
 finished_sandwiches = []
