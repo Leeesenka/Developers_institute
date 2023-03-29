@@ -1,0 +1,146 @@
+# Exercise 1 : What Are You Learning ?
+def display_message():
+    "We are learning Python"
+    print("Hooray")
+# Hooray
+
+# Exercise 2: What’s Your Favorite Book ?
+def  favorite_book(title):
+        print("One of my favorite books is", title)
+favorite_book("Tom")    
+
+# Exercise 3 : Some Geography
+def describe_city(city, country):
+    concatenated = city +' ' + "is in" + ' ' + country
+    return concatenated
+res = describe_city('Kazan', 'Russia')
+print(res)
+
+# Kazan is in Russia
+
+# Exercise 4 : Random
+
+import random
+first_number = 1
+def namb1(first_number):
+    second_number = random.randrange(1,100)
+    if first_number == second_number:
+        print("Good",first_number, second_number)
+    elif first_number != second_number:
+        print("Error",first_number, second_number)
+namb1(first_number)
+
+
+
+
+  
+   
+# Good 1 1  
+# Error 5 92
+  
+# Exercise 5 : Let’s Create Some Personalized Shirts !
+def make_shirt(size = "Large", text = "I love python"):
+    print("The size of the shirt is" + ' ' + size + ' '+ "and the text is" + ' '  + text)
+make_shirt("L", "You")
+# The size of the shirt is Large and the text is I love python
+# The size of the shirt is L and the text is You
+
+# Exercise 6 : Magicians …
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+def great_names(users):
+    for user in users:
+        print(user.title())       
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+great_names(magician_names) 
+make_great = map(lambda s:"The Great " + s, magician_names) 
+print(list(make_great))
+great_names(make_great)
+
+# Exercise 7 : Temperature Advice
+import random
+def  get_random_temp(season_1):
+    if season_1 == "winter" or season_1 in ["1", "2", "12"]:
+        degrees = random.randrange(-10,0)
+    elif season_1 == "spring" or season_1 in ["3", "4", "5"]:
+        degrees = random.randrange(1,15)
+    elif season_1 == "summer" or season_1 in range(6,9):
+        degrees = random.randrange(16,41)   
+    return(degrees) 
+
+
+def main():
+    season = input("Say me season of the year...")
+    temp = get_random_temp(season)
+    print("The temperature right now is ", temp, "degrees Celsius")
+    return(temp)
+red = main()  
+
+if red <= 0:
+    print('"Brrr, that’s freezing! Wear some extra layers today”')
+elif 0 < red < 16:
+    print('“Quite chilly! Don’t forget your coat”')
+elif 16 < red < 23:
+    print("Warm")
+elif 24 < red < 32:
+    print("Hot")
+elif 32 < red < 40:    
+    print("Burned")
+        
+
+# Say me season of the year...9
+# The temperature right now is  36 degrees Celsius
+# Burned
+
+#  Say me season of the year...spring
+# The temperature right now is  5 degrees Celsius
+# “Quite chilly! Don’t forget your coat”         
+
+# Daily Challenge: Solve The Matrix
+matrix_sring = """7i3
+Tsi
+h%x
+i #
+sM 
+$a 
+#t%
+^r!"""
+i = 0
+list1 = []
+clean_string = matrix_sring.replace('\n', '')
+while i < len(clean_string):
+    list1.append([clean_string[i:i+3]])
+    i +=3
+print(list1)
+final_string = ""
+for x in range(0,3,1):
+    for i, value in enumerate(list1):
+        if value[0][x].isalpha():
+            final_string = final_string + value[0][x]
+print(final_string)
+i = 0
+word = ""
+while i < len(final_string):
+    if i % 2:
+       word += final_string[i] + " "
+    else:
+        word += final_string[i]
+    if i == len(final_string)-1:
+        break
+    i += 1
+print (word)
+    
+# ThisisMatrix
+# Th is is Ma tr ix 
+        
+
+
+
+   
+
+
+
+
+
+
+
+
