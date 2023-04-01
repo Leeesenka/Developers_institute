@@ -4,9 +4,6 @@ def display_board(board_position, player):
     x = ("-")
     external_delimter = (board * 17)
     delimetr = (y[0] + " " *2+x*3 + y[2] + x*3 + y[2]+x*3+" " * 2 + y[0])
-    position1 = " "
-    position2 = " "
-    position3 = " "
     print(external_delimter)
     for position, external in enumerate(board_position):
         position1 = " "
