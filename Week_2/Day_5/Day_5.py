@@ -52,15 +52,7 @@ def check_win(board_position, player):
         return True 
     if (board_position[2][0] == board_position[1][1] == board_position[0][2]) and board_position[2][0] != "":
         return True
-    return False       
-
-
-
-
-    
-
-    return
-
+    return False
 
 def play():
     print("*" * 10, " TicTacToe game in python ", "*" * 10)
