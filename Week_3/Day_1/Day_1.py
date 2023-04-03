@@ -168,7 +168,7 @@ text = "E-I-E-I-0!"
 formatted_text = "{:>20}".format(text)
 print(formatted_text)
 
-
+# ['cow', 'cow', 'cow', 'cow', 'cow', 'sheep', 'sheep', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat', 'goat']
 # goat : 12
 # sheep : 2
 # cow : 5
