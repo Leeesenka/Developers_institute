@@ -135,19 +135,19 @@ alphabetList = "abcdefghijklmnopqrstuvwxyz"
 alphabetList = list(alphabetList)
 
 p = Pagination(alphabetList, 4.5)
-print(p.totalPages)          
-#print(p.getVisibleItems())
+# print(p.totalPages)          
+# print(p.getVisibleItems())
 # print(p.prevPage())
 # print(p.getVisibleItems())
 # print(p.nextPage())
 # print(p.getVisibleItems())
-# print(p.firstPage())
+# # print(p.firstPage())
 # print(p.getVisibleItems())
 # print(p.lastPage())
 # print(p.getVisibleItems())
 
-# print(p.nextPage().nextPage())
-# print(p.getVisibleItems())
+print(p.nextPage().nextPage())
+print(p.getVisibleItems())
 
 
 
