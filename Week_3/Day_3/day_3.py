@@ -150,7 +150,7 @@ print(f"the 1st of January is in", last_days)
 
 # the 1st of January is in 271 days, 4:25:55.762023
 
-Exercise 6 : Birthday And Minutes
+# Exercise 6 : Birthday And Minutes
 from datetime import datetime
 actual_datetime = datetime.now()
 b_date = "08/05/1988"
