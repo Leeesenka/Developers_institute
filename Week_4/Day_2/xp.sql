@@ -31,6 +31,15 @@
 
 
 
+-- select title, rating, length, rental_rate 
+-- from film 
+-- where (rating = 'PG-13' or rating = 'G') 
+-- and 
+-- (length <= 120) and (rental_rate < 3.00) order by title;
+
+-- update customer set first_name = 'Alesya', last_name= 'Frolova' where customer_id = 1;
+-- select first_name, last_name from customer where customer_id = 1;
+
 
 
 
