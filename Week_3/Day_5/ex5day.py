@@ -48,12 +48,16 @@ class Deck:
     def shuffle(self):
         if len(self.cards) == 52:
             return random.shuffle(self.cards)
+      
 
     def deal(self):
         if len(self.cards) > 0:
             return self.cards.pop()
+            
         else:
-            return "Deck is empty"
+            return "Deck is empty" 
+    
+
            
        
 class Card:
