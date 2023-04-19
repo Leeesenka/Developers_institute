@@ -4,7 +4,7 @@ from ex_xp import MenuItem
 from datetime import date
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
-PASSWORD = 'N9ec7hyv'
+PASSWORD = 'Oi3msd4d907'
 DATABASE = 'Menu'
 
 
