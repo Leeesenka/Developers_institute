@@ -1,0 +1,2 @@
+venu: [in terminal] -pyton3 -m venu my_enu
+
