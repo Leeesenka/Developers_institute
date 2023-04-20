@@ -1,8 +1,9 @@
 import psycopg2
 from datetime import date
+import os
 HOSTNAME = 'localhost'
-USERNAME = 'postgres'
-PASSWORD = 'Oi3msd4d907'
+USERNAME = os.environ['PGUSER']
+PASSWORD = os.environ['PGPWD']
 DATABASE = 'Menu'
 
 
