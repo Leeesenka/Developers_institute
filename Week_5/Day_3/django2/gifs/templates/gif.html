@@ -5,4 +5,9 @@
   <p>Uploader: {{ gif.uploader_name }}</p>
   <p>Created at: {{ gif.created_at }}</p>
   <img src="{{ gif.url }}" alt="{{ gif.title }}">
+  <form method="post" action="{% url 'like_gif' gif.id %}">
+    {% csrf_token %}
+    <button type="submit" name="like" value="1">Like</button>
+    <button type="submit" name="like" value="-1">Dislike</button>
+  </form>
 {% endblock %}

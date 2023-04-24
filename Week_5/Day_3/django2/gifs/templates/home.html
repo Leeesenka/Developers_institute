@@ -5,6 +5,7 @@
 <a href="{% url 'add'  %}"> New gifs</a>
 <a href="{% url 'add_category'  %}"> New category</a>
 <a href="{% url 'categories' %}"> All categories</a>
+<a href="{% url 'popular_gifs' %}">Categories</a>
 <ul>
   
   <h1>GIFs</h1>
@@ -21,5 +22,6 @@
     {% endfor %}
   </ul>
 
-  <a href="{% url 'categories' %}">Categories</a>
+ 
+ 
 {% endblock %}

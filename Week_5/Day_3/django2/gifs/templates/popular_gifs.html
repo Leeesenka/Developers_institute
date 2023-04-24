@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Popular GIFs</h2>
+  <ul>
+    {% for gif in gifs %}
+      <li><a href="{% url 'gif' gif.id %}">{{ gif.title }}</a> - {{ gif.likes }} likes</li>
+    {% empty %}
+      <li>No popular GIFs found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

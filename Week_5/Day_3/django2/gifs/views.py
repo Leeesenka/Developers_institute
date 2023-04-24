@@ -24,7 +24,15 @@ def add_category(request):
     }
     return render(request, 'add_category.html', context)
 
-
+def add_new_category(request):
+    if request.method == 'POST':
+        form = Category(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('categories')
+    else:
+        form = Category()
+    return render(request, 'add_category.html', {'form': form})
 
 def add_gif_info(request):
     if request.method == 'POST':
@@ -54,3 +62,14 @@ def gif(request, gif_id):
 
 
 
+def like_gif(request, gif_id):
+    gif = get_object_or_404(GifModel, id=gif_id)
+    if request.method == 'POST':
+        like = int(request.POST.get('like', 0))
+        gif.likes += like
+        gif.save()
+    return redirect('gif', gif_id=gif_id)
+
+def popular_gifs(request):
+    gifs = GifModel.objects.filter(likes__gt=0).order_by('-likes')
+    return render(request, 'popular_gifs.html', {'gifs': gifs})
