@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home'  %}"> All gifs</a> 
+<a href="{% url 'add'  %}"> New gifs</a>
+<a href="{% url 'add_category'  %}"> New category</a>
+{%for i in gifss%}
+<div>
+    <img src="{{i.url}}">
+</div>
+{%endfor%}
+{% endblock %}

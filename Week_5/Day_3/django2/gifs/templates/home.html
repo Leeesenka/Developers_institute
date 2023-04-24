@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home'  %}"> All gifs</a> 
+<a href="{% url 'add'  %}"> New gifs</a>
+<a href="{% url 'add_category'  %}"> New category</a>
+<a href="{% url 'categories' %}"> All categories</a>
+<ul>
+  
+  <h1>GIFs</h1>
+  <ul>
+    {% for category in categories %}
+      <li><a href="{% url 'category' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for gif in gifs %}
+      <li><a href="{% url 'gif' gif.id %}"><img src="{{ gif.url }}"></a></li>
+    {% empty %}
+      <li>No GIFs found.</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'categories' %}">Categories</a>
+{% endblock %}
