@@ -5,6 +5,7 @@ from .forms import Gif, Category
 from .models import GifModel, Category_Model
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.http import HttpResponse
 
 def home(request):
     gifs = GifModel.objects.all()
@@ -26,29 +27,49 @@ def add_category(request):
 
 def add_new_category(request):
     if request.method == 'POST':
-        form = Category(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('categories')
-    else:
-        form = Category()
-    return render(request, 'add_category.html', {'form': form})
+        gif_filled_form = Category(request.POST)
+        if gif_filled_form.is_valid():
+            gif_filled_form.save()
+            return HttpResponse('SUCCESSFULL')
+
+    # if request.method == 'GET':
+    gif_form = Category()
+    context = {'form': gif_form}
+    gif_filled_form = Category(request.POST)
+
+    return render(request, 'add_gif.html',context)
+    
+
 
 def add_gif_info(request):
+
     if request.method == 'POST':
-        form = Gif(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = Gif()
-    return render(request, 'add_gif.html', {'form': form})
+        gif_filled_form = Gif(request.POST)
+        if gif_filled_form.is_valid():
+            gif_filled_form.save()
+            return HttpResponse('SUCCESSFULL')
+
+    if request.method == 'GET':
+        gif_form = Gif()
+        context = {'form': gif_form}
+        gif_filled_form = Gif(request.POST)
+        return render(request, 'add_gif.html',context)
+
+
+    # if request.method == 'POST':
+    #     form = Gif(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('home')
+    # else:
+    #     form = Gif()
+    # return render(request, 'add_gif.html', {'form': form})
 
 def Category_view(request, category_id):
-    gifs = GifModel.objects.filter(id=category_id)
-  
+    category = Category_Model.objects.get(id=category_id)
+    gifs = category.gifs.all
     context = {'gifs': gifs}
-    return render(request, 'category.htm',context)
+    return render(request, 'category.html',context)
 
 
 def categories(request):

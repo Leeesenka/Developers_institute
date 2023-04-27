@@ -11,11 +11,11 @@ class GifModel(models.Model):
 
 
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.title}, {self.uploader_name}'
     
 class Category_Model(models.Model):
     name = models.CharField(max_length=200)
-    gifs = models.ManyToManyField('GifModel')
+    gifs = models.ManyToManyField(GifModel, related_name = 'categories')
 
     def __str__(self):
         return f'{self.name}'

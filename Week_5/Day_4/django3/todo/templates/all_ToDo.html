@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>All</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <h2>Add New Task</h2>
+    <form method="POST" action="{% url 'add_todo' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Add</button>
+    </form>
+    
+    <h2>All Tasks</h2>
+    <table>
+      
+      <tbody>
+        {% for todo in todos %}
+          <tr>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.details }}</td>
+            <td>{{ todo.date_creation }}</td>
+            <td>{{ todo.deadline_date }}</td>
+            <td>{{ todo.category }}</td>
+            {% if todo.has_been_done %}
+              <td>Done</td>
+            {% else %}
+              <td>
+                <form method="POST" action="{% url 'todo_done' todo.id %}">
+                  {% csrf_token %}
+                  <button type="submit">Done</button>
+                </form>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+</body>
+</html>
+
