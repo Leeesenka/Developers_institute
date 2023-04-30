@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    {%block content%}
+    <h2>Vehicle Details</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <td>{{ vehicle.id }}</td>
+  </tr>
+  <tr>
+    <th>Type</th>
+    <td>{{ vehicle.vehicle_type.name }}</td>
+  </tr>
+  <tr>
+    <th>Date Created</th>
+    <td>{{ vehicle.date_created }}</td>
+  </tr>
+  <tr>
+    <th>Real Cost</th>
+    <td>{{ vehicle.real_cost }}</td>
+  </tr>
+  <tr>
+    <th>Size</th>
+    <td>{{ vehicle.size.name }}</td>
+  </tr>
+  <tr>
+    <th>Rental Status</th>
+    <td>{% if is_rented %}Currently Rented{% else %}Available{% endif %}</td>
+  </tr>
+</table>
+{%endblock%}
+</body>
+</html>
