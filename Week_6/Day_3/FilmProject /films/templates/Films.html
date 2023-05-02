@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+<h2>Profile: <smal>{{user.profile}} </smal></h2>
+  <div class="row">
+    {% for film in films %}
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'film_detail' film.id %}" class="text-decoration-none">
+            <div class="card">
+             
+              <div class="card-body">
+                <h5 class="card-title">{{ film.title }}</h5>
+                <p class="card-text">Release Date: {{ film.release_date }}</p>
+                <p class="card-text">Category: {{ film.category.all|join:", " }}</p>
+                <p class="card-text">Created in country: {{ film.created_in_country}}</p>
+                <p class="card-text">Director(s): {{ film.director.all|join:", " }}</p>
+              </div>
+            </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

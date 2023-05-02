@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Base</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+  {%block content%}
+
+    <h2>Rentals</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Vehicle</th>
+          <th>Rental Date</th>
+          <th>Return Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rental in list_r %}
+          <tr>
+            <td><a href="{% url 'rental_detail' rental.pk %}">{{ rental.pk }}</a></td>
+            <td>{{ rental.customer.first_name }} {{ rental.customer.last_name }}</td>
+            <td>{{ rental.vehicle.vehicle_type.name }} - {{ rental.vehicle.size.name }}</td>
+            <td>{{ rental.rental_date }}</td>
+            <td>{{ rental.return_date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+{%endblock%}
+</body>
+</html>
+

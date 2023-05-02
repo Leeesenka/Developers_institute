@@ -11,13 +11,25 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'all_film' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="{% url 'profile-page' pk=user.profile.id %}">Profile</a>
               </li>
+              {%if user.is_superuser%}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_director' %}">Add Director</a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_film' %}">Add Film</a>
+              </li>
+              {%endif%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'all_films' %}">All films</a>
               </li>
             </ul>
           </div>

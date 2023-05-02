@@ -1,0 +1,13 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% for film in films %}
+<tr>
+    <td>{{ film.title }}</td>
+    <td>{{ film.release_date }}</td>
+  
+    <td>
+        <a href="{% url 'delete_film' film.id %}" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+{% endblock %}

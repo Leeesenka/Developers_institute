@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ film.title }}</h2>
+    <p>{{ film.release_date }}</p>
+
+    <h3>Comments</h3>
+    {% for comment in comments %}
+    <div class="comment">
+        <strong>{{ comment.user.username }}</strong>
+        <p>{{ comment.text }}</p>
+        <small>{{ comment.created_at }}</small>
+    </div>
+    {% empty %}
+    <p>No comments.</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <h3>Add comments</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    {% else %}
+    <p><a href="{% url 'login' %}">Login </a>, to leave.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

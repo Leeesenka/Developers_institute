@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Base</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+  {%block content%}
+  <h2>Rental Details</h2>
+
+  <h3>Customer</h3>
+  <p><a href="{% url 'customer_detail' rental.customer.pk %}">{{ rental.customer.first_name }} {{ rental.customer.last_name }}</a></p>
+
+  <h3>Vehicle</h3>
+  <p><a href="{% url 'vehicle_detail' rental.vehicle.pk %}">{{ rental.vehicle.vehicle_type.name }} - {{ rental.vehicle.size.name }}</a></p>
+
+<h2>Rental Details</h2>
+
+
+
+<p>Rental Date: {{ rental.rental_date }}</p>
+{% if rental.return_date %}
+  <p>Returned on: {{ rental.return_date }}</p>
+{% else %}
+  <p>Not yet returned</p>
+{% endif %}
+{% if not rental.return_date %}
+    <form method="post" action="{% url 'rental_return' rental.pk %}">
+      {% csrf_token %}
+      <button type="submit">Return Vehicle</button>
+    </form>
+  {% endif %}
+{%endblock%}
+</body>
+</html>

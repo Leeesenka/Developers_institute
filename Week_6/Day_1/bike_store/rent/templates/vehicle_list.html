@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    {%block content%}
+    <h2>Vehicle List</h2>
+
+{% for vehicle_type in vehicle_types %}
+  <h3>{{ vehicle_type.name }}</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date Created</th>
+        <th>Real Cost</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for vehicle in vehicle_type.vehicle_set.all %}
+        <tr>
+          <td>{{ vehicle.id }}</td>
+          <td>{{ vehicle.date_created }}</td>
+          <td>{{ vehicle.real_cost }}</td>
+          <td>{{ vehicle.vehicle_size.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}
+{%endblock%}
+</body>
+</html>

@@ -5,7 +5,7 @@ import json
 
 conn = psycopg2.connect(
     host='localhost',
-    database='game',
+    database='game_new',
     user='postgres',
     password='Oi3msd4d907'
 )

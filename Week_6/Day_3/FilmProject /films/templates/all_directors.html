@@ -1,0 +1,13 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% for director in directors %}
+<tr>
+    <td>{{ director.first_name }}</td>
+    <td>{{ director.last_name }}</td>
+  
+    <td>
+        <a href="{% url 'delete_film' director.id %}" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+{% endblock %}
