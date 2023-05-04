@@ -30,5 +30,5 @@ urlpatterns = [
     # path('create_album/', create_album, name='create_album'),
     # path('albums/', view_albums, name='view_albums'),
     # path('feed/', feed, name='feed'),
-   
+
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

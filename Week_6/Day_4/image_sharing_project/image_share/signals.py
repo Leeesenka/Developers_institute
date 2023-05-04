@@ -10,10 +10,10 @@ def create_user_profile(sender, instance, created, **kwargs):
         new_profile = Profile.objects.create(user=instance)
         print(f"CREATE PROFILE: {new_profile}")
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
