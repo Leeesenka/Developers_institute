@@ -7,7 +7,7 @@ conn = psycopg2.connect(
     host='localhost',
     database='game_new',
     user='postgres',
-    password='Oi3msd4d907'
+    password='#'
 )
 
 
