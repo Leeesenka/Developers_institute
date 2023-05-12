@@ -1,19 +1,22 @@
 {% extends 'partials/base.html' %}
 {% block content %}
-<h1>All Images</h1>
-
-{% if images %}
-  <ul>
-    {% for image in images %}
-      <li>
-        <a href="{% url 'view_image' image.id %}">
-          <img src="/media/{{ image.image_file }}" alt="{{ image.title }}" width="300px">
-          <br>
-          {{ image.title }}
-        </a>
-      </li>
+<div class="container">
+    <h1>All Images</h1>
+        {% if images %}
+    <div class="row">
+        {% for image in images %}
+        <div class="col mb-4">
+            <div class="card" style="width: 18rem;">
+                <a href="{% url 'view_image' image.id %}">
+                <img src="/media/{{ image.image_file }}" class="card-img-top" alt="{{ image.title }}" width="300px"></a>
+                    <div class="card-body">
+                    <p class="card-text">{{ image.title }}</p>
+                    </div>
+            </div>
+        </div>
     {% endfor %}
-  </ul>
+    </div>  
+</div>  
 {% else %}
   <p>You haven't uploaded any images yet.</p>
 {% endif %}
