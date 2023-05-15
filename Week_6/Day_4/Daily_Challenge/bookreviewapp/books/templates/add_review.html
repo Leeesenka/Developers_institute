@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+   
+</head>
+<body>
+    {% block content %}
+  <h2>Add a review</h2>
+  <form method="post" action="{% url 'add_review' book_id=book_id %}">
+    {% csrf_token %}
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" name="rating" min="1" max="5" required>
+    <br>
+    <label for="review_text">Review:</label>
+    <textarea name="review_text" required></textarea>
+    <br>
+    <button type="submit">Submit Review</button>
+  </form>
+{% endblock %}
+</body>
+</html>

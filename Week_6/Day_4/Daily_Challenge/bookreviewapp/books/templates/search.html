@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+<body>
+
+
+{% block content %}
+  <form method="get" action="{% url 'search' %}">
+    <input type="search" name="query" placeholder="Search for books..." value="{{ query }}">
+    <button type="submit">Search</button>
+  </form>
+
+  {% for book in books %}
+  
+    <div class="book">
+        <h2><a href="{% url 'book_detail' book_id=book.id %}">{{ book.title }}</a></h2>
+    
+    
+
+    <div class="book">
+    
+      <p>Author: {{ book.author }}</p>
+      <p>Published: {{ book.published_date }}</p>
+      <p>Pages: {{ book.page_count }}</p>
+      <p>Categories: {{ book.categories }}</p>
+      <img src="{{ book.thumbnail_url }}" alt="{{ book.title }} thumbnail">
+      <p>{{ book.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}
+
+</body>
+</html>
