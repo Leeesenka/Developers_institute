@@ -1,0 +1,24 @@
+Congratulations on your "Who Wants to Be a Millionaire" game code! I have reviewed it and wanted to provide some feedback:
+
+1. Code Structure:
+   - Well-organized with classes for questions and game logic.
+   - Clear separation of concerns for maintainability.
+   - Code is DRY.
+
+2. Database Integration:
+   - Good use of `psycopg2` library for PostgreSQL database integration.
+   - Fetching questions dynamically allows for easy content management.
+
+3. Game Logic:
+   - Solid implementation of game flow and question presentation.
+   - Randomized answer shuffling adds to the user experience.
+
+4. User Interaction:
+   - Clear instructions and prompts make the game engaging.
+   - Options to quit and milestones enhance gameplay.
+
+One suggestion to enhance the game further would be to add wildcard options, similar to the ones available in the real program.
+Wildcards could provide assistance to the player, such as eliminating two incorrect answers, asking the audience for their opinion, or seeking help from an expert.
+By incorporating wildcards, you can increase the suspense and strategic element of the game, making it even more exciting for the players.
+
+Keep up the excellent work!
