@@ -1,6 +1,6 @@
 // Exercise 1 : List Of People
 
-const people = ["Greg", "Mary", "Devon", "James"];
+// const people = ["Greg", "Mary", "Devon", "James"];
 // let first = people.shift()
 // console.log(people);
 // const index = people.indexOf("James");
