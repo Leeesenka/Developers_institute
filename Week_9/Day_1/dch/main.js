@@ -17,7 +17,7 @@ function randomSubmit(e) {
     let story;
     const random_story = Math.floor(Math.random() * 3);
     if (random_story === 0) {
-        story = nounInput.value + ' ' + adjectiveInput.value + ' ' + personInput.value + ' ' + verbInput.value + ' ' + placeInput.value;
+        story = personInput.value + ' ' + verbInput.value + ' ' + nounInput.value + ' ' + adjectiveInput.value + ' ' + placeInput.value
     } else if (random_story === 1) {
         story = adjectiveInput.value + ' ' + personInput.value + ' ' + placeInput.value + ' ' + nounInput.value + ' ' + verbInput.value;
     } else {
@@ -37,8 +37,8 @@ function handleSubmit(e) {
     }
 
     
-    const story = personInput.value + ' ' + verbInput.value + ' ' + nounInput.value + ' ' + adjectiveInput.value + ' ' + placeInput.value
- 
+    const story = nounInput.value + ' ' + adjectiveInput.value + ' ' + personInput.value + ' ' + verbInput.value + ' ' + placeInput.value;
+    
     
     console.log(story);
     document.getElementById('story').textContent = story;
