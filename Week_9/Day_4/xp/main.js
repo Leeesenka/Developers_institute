@@ -109,26 +109,67 @@
 // console.log(object4.number)//5
 
 
-class Animal {
-    constructor(name, type, color){
-        this.name = name;
-        this.type = type;
-        this.color = color;
-    }
-}
-class Mamal extends Animal {
-    constructor(name, type, color){
-        super(name, type, color)
+// class Animal {
+//     constructor(name, type, color){
+//         this.name = name;
+//         this.type = type;
+//         this.color = color;
+//     }
+// }
+// class Mamal extends Animal {
+//     constructor(name, type, color){
+//         super(name, type, color)
         
         
-    }
-    sound(sound1){
+//     }
+//     sound(sound1){
         
-        console.log(`${sound1} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`)
+//         console.log(`${sound1} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`)
 
-    }
-}
-let newAnimal = new Mamal("Rex", "Mamal", "Black")
-let farmerCow = new Mamal("Lily", "cow", "black and white")
-newAnimal.sound("wow")
-farmerCow.sound('Moooooo')
+//     }
+// }
+// let newAnimal = new Mamal("Rex", "Mamal", "Black")
+// let farmerCow = new Mamal("Lily", "cow", "black and white")
+// newAnimal.sound("wow")
+// farmerCow.sound('Moooooo')
+
+
+// Exercise 1 : Print Full Name
+// function printFullName(items){
+//     console.log('Your full name is ' + items.first + " " + items.last )
+// }
+// printFullName({first: 'Elie', last:'Schoppik'}) 
+
+// Exercise 2 : Keys And Values
+
+
+// function keysAndValues(value){
+//     let keys = Object.keys(value).sort();
+//     let vlues = Object.values(value).sort()
+//     let arr = [];
+//     arr.push(keys)
+//     arr.push(vlues)
+//     console.log(arr)
+   
+// }
+
+// keysAndValues({ a: 1, b: 2, c: 3 })
+// keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" })
+// keysAndValues({ key1: true, key2: false, key3: undefined })
+
+
+// class Bird {
+//     constructor() {
+//       console.log("I'm a bird. 🦢");
+//     }
+//   }
+  
+//   class Flamingo extends Bird {
+//     constructor() {
+//       console.log("I'm pink. 🌸");
+//       super();
+//     }
+//   }
+  
+//   const pet = new Flamingo();
+
