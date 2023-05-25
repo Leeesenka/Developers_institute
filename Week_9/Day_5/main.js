@@ -108,6 +108,7 @@ parentElements3.forEach(function(vol, index){
     vol.appendChild(email)
     email.style.fontSize = '18px'
     text.style.fontSize = '20px'
+    text.style.fontWeight = 'bold'
 })
 
 
