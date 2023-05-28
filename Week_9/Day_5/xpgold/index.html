@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tic Tac Toe Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+        }
+        .title_text {
+            display: flex;
+            position: relative;
+            margin-top: 100px;
+            flex-direction: column;
+            text-align: center;
+        }
+        .title_text h1 {
+            font-size: 40px;
+
+        }
+        .choose {
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .choose h3 {
+            margin-right: 10px;
+            font-size: 25px;
+        }
+        .choose button {
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #5f4b7d;
+            color: aliceblue;
+        }
+        body {
+            background-color: #9B6BB3;
+            color: aliceblue;
+            font-family: "Comic Sans MS", cursive, sans-serif
+        }
+
+
+    </style>
+    <div class="container" id="container">
+        <div class="title_text">
+            <h1>Tic Tac Toe Game</h1>
+            <div class="choose" id="choose">
+                <h3>Choose which one to play with:</h3>
+                <button id="x" class="first">X</button>
+                <button id="o" class="first">O</button>
+            </div>
+            
+        </div>
+        <table class="board" id="board">
+
+        </table>
+        <div class="end_game">
+
+        </div>
+
+    </div>
+
+    <script src='main.js'></script>
+</body>
+</html>
