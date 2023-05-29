@@ -9,9 +9,23 @@
 </head>
 <body>
     <div id="quote">
-        
+
     </div>
     <button type="submit">Generate Quote</button>
+    <form action="index.html" method="POST" id="form1"><br>
+        <div>
+          <label for="name">Author name:</label><br>
+          <input name="name" id="name" value="John" />
+        </div>
+        <br>
+        <div>
+        <label for="quote_form">Quote:</label><br>
+        <textarea id="quote_form" name="quote_form" placeholder="Write something.." style="height:200px"> </textarea><br>
+        </div>
+        <div>
+          <button>Send</button>
+        </div>
+      </form>
     <script src='main.js'></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const quoteAll = [
+let quoteAll = [
     {
         id: 0,
         author: "Frank Zappa",
@@ -31,3 +31,20 @@ console.log(randomElement.quote)
 }
 button.addEventListener('click', my_func);
 
+const formElement = document.getElementById('form1'); 
+formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nameAuthor = document.getElementById('name').value;
+    const quoteNew = document.getElementById('quote_form').value;
+    const formData = {
+        id: quoteAll.length,
+        author: nameAuthor,
+        quote: quoteNew
+    };
+    let jsonData = JSON.stringify(formData);
+    quoteAll.push(formData);
+    console.log(jsonData);
+    console.log(quoteAll);
+  });
+  console.log(quoteAll)
