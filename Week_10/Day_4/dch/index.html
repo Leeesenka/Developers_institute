@@ -5,10 +5,64 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 </head>
+<style>
+    body {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .main {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        margin: 50px;
+        width: 600px;
+        height: 500px;
+        border: 2px solid black;
+        align-items: center;
+    }
+    form {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        margin: 20px;
+    }
+
+    button {
+        width: 70px;
+        height: 40px;
+        margin-left: 20px;
+
+    }
+    i {
+        font-size: 60px;
+    }
+</style>
 <body>
-    
+    <div class="main">
+        <h1>Currency Converter</h1>
+        <h3>From:</h3>
+        <select id="select1"></select>
+        <h3>To:</h3>
+        <select id="select2"></select>
+        <h3>Amount:</h3>
+            <div class="forms">
+                <form action="index.html" id="form1" method="get">
+                <input type="text" id="number" name="number"><br><br>
+                <button type="submit" id="button">Convert</button>
+            </form>
+            </div>
+        <p id="res"></p>    
+        <i class ="fa-solid fa-money-check-dollar fa-flip" style="--fa-animation-duration: 3s;" id="change" ></i>
+
+    </div>
 
      <script src='main.js'></script>
 </body>
