@@ -17,18 +17,21 @@ async function loading() {
     document.getElementById('height').innerText = ""
     document.getElementById('gender').innerText = ""
     document.getElementById('birth-year').innerText = ""
-    
+    document.getElementById('home-world').innerText = ""
     let random = Math.floor(Math.random() * 83) + 1; 
 
     try {
         let character = await fetchCharacter(random);
         displayInfo(character);
+        let homeworldName = await fetchHome(character);
+        displayHome(homeworldName);
     } catch (error) {
         console.error(`Error: ${error}`);
         document.getElementById('name').innerText = "Oh No! That person isnt avialable."
         document.getElementById('height').innerText = ""
         document.getElementById('gender').innerText = ""
         document.getElementById('birth-year').innerText = ""
+        document.getElementById('home-world').innerText = ""
   
 }}
 
