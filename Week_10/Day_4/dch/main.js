@@ -12,7 +12,6 @@ async function fetchConverter(val1, val2) {
     }
 }
 
-
 document.getElementById('button').addEventListener('click', async (event) => {
     event.preventDefault();
     let val1 = document.getElementById('select1').value.slice(0,3);
