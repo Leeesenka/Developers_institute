@@ -1,3 +1,5 @@
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,7 +183,7 @@ body {
 }
 .place-sderot-city {
   position: absolute;
-  top: 570px;
+  top: 595px;
   left: 672px; 
 }
 .place-ashkelon-city {
@@ -191,7 +193,7 @@ body {
 }
 .place-ashdot-city {
   position: absolute;
-  top: 520px;
+  top: 540px;
   left: 550px; 
 }
 .place-Gaza-city {
@@ -201,12 +203,12 @@ body {
 }
 .place-eilat-city {
   position: absolute;
-  top: 675px;
+  top: 690px;
   left: 1110px; 
 }
 .place-bersheva-city {
   position: absolute;
-  top: 560px;
+  top: 575px;
   left: 750px; 
 }
 .place-Jerusalem-city {
@@ -216,12 +218,12 @@ body {
 }
 .place-ramat-gan-city {
   position: absolute;
-  top: 420px;
+  top: 440px;
   left: 490px; 
 }
 .place-Tel-Aviv-city {
   position: absolute;
-  top: 480px;
+  top: 495px;
   left: 475px; 
 }
 .place-Netanya-city {
@@ -321,77 +323,38 @@ p {
   <nav class="navbar navbar-light bg-transparent fixed-top">
     <div class="container-fluid justify-content-end">
       <div class="navbar-brand text-muted d-flex">
-        <img src="vecteezy_chart.png" width="50px">
+        <img src="{% static 'images/vecteezy_chart.png' %}" width="50px">
         <div>
-            <a title="See demos" id="two" href="#" class="btn btn-primary btn-sm mr-3" role="button">See demos</a>
-            <a title="See demos" id="two" href="#" class="btn btn-primary btn-sm mr-3" role="button">See demos</a>
-            <a title="See demos" id="one" href="#" class="btn btn-primary btn-sm mr-3" role="button">See demos</a>
-            <a title="See demos" id="one" href="#" class="btn btn-primary btn-sm mr-3" role="button">See demos</a>
-            <a title="See demos" id="one" href="#" class="btn btn-primary btn-sm mr-3" role="button">See demos</a>
-            <a title="See demos" id="one" href="#" class="btn btn-primary btn-sm" role="button">See demos</a>
-            
+            <a title="See demos" id="two" href="{% url 'index_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Home Page</a>
+            <a title="See demos" id="two" href="{% url 'city_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">City Alerts</a>
+            <a title="See demos" id="one" href="{% url 'city_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">City Alerts</a>
+            <a title="See demos" id="one" href="{% url 'index_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Home Page</a>
+            <a title="See demos" id="one" href="{% url 'month_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Month Alerts</a>
+            <a title="See demos" id="one" href="{% url 'time_alerts_graph' %}" class="btn btn-primary btn-sm" role="button">Time Alerts</a>
           </div>
     </div>
-    
-      
-      
-
-     
-      <div class="offcanvas offcanvas-end text-muted" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-          <button type="button" class="btn-close text-muted" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link text-muted" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item text-dark" href="#">Action</a></li>
-                <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2 text-muted" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
+  
   </nav>
 <div class="alarm">  
 <div class="first">
   <div class="main" id="rotate-container">
-    <img src="israel.png" id="israel">
-    <img src="meron.png" id="meron">
-    <img src="golan.png" id="golan">
-    <img src="tveria.png" id="tveria">
-    <img src="akko.png" id="akko">
-    <img src="jerusalim.png" id="jerusalim">
-    <img src="hayfa.png" id="hayfa">
-    <img src="hadera.png" id="hadera">
-    <img src="netania.png" id="netania">
-    <img src="ranatdan.png" id="ranatdan">
-    <img src="tlv.png" id="tlv">
-    <img src="bersheva.png" id="bersheva">
-    <img src="eylat.png" id="eylat">
-    <img src="gaza.png" id="gaza">
-    <img src="ashdot.png" id="ashdot">
-    <img src="ashkelon.png" id="ashkelon">
-    <img src="sderot.png" id="sderot">
+    <img src="{% static 'images/israel.png' %}" id="israel">
+    <img src="{% static 'images/meron.png' %}" id="meron">
+    <img src="{% static 'images/golan.png' %}"id="golan">
+    <img src="{% static 'images/tveria.png' %}" id="tveria">
+    <img src="{% static 'images/akko.png' %}" id="akko">
+    <img src="{% static 'images/jerusalim.png' %}"id="jerusalim">
+    <img src="{% static 'images/hayfa.png' %}" id="hayfa">
+    <img src="{% static 'images/hadera.png' %}" id="hadera">
+    <img src="{% static 'images/netania.png' %}"id="netania">
+    <img src="{% static 'images/ranatdan.png' %}" id="ranatdan">
+    <img src="{% static 'images/tlv.png' %}" id="tlv">
+    <img src="{% static 'images/bersheva.png' %}"id="bersheva">
+    <img src="{% static 'images/eylat.png' %}" id="eylat">
+    <img src="{% static 'images/gaza.png' %}" id="gaza">
+    <img src="{% static 'images/ashdot.png' %}" id="ashdot">
+    <img src="{% static 'images/ashkelon.png' %}" id="ashkelon">
+    <img src="{% static 'images/sderot.png' %}"id="sderot">
   </div>
   <div class="place-sderot-city">
     <div class="sderot-city">
@@ -488,7 +451,7 @@ p {
 <div class="text-logo">
   <h1><b>Safe in Israel:</b> Where technology and people work together for your protection</h1>
   <a title="See demos" href="#" class="btn btn-primary btn-lg" role="button">See demos 
-  <img src="vecteezy_chart.png" width="35px"></a>
+  <img src="{% static 'images/vecteezy_chart.png' %}" width="35px"></a>
 </div>
 
 
@@ -496,3 +459,4 @@ p {
   <script src='main.js'></script>
 </body>
 </html>
+{% endblock %}

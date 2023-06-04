@@ -32,3 +32,5 @@ def time_alerts_graph(request):
 def month_alerts_graph(request):
     return render(request, 'month_alerts.html')
 
+def index_alerts_graph(request):
+    return render(request, 'index_alerts.html')

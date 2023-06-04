@@ -1,17 +1,16 @@
 async function searchTime() {
-    const selectedYear = document.getElementById("yearSelect").value; // Получаем выбранный год
-    let selectedMonth = document.getElementById("monthSelect").value; // Получаем выбранный месяц
+    const selectedYear = document.getElementById("yearSelect").value; 
+    let selectedMonth = document.getElementById("monthSelect").value; 
     
-    // Если месяц не выбран (None), установите selectedMonth в null
+
     if (selectedMonth === "12") {
       selectedMonth = null;
     }
 
     try {
-      const response = await axios.get("/api/messages"); // Получаем все сообщения из API
+      const response = await axios.get("/api/messages"); 
       const data = response.data;
-  
-      // Фильтруем данные по выбранному году и, если выбран, по месяцу
+ 
       const filteredData = data.filter(item => {
         const itemDate = new Date(item.date);
         const conditionYear = itemDate.getFullYear() == selectedYear;
@@ -19,12 +18,12 @@ async function searchTime() {
         return conditionYear && conditionMonth;
       });
   
-      // Выводим количество совпадений
+    
       const count = filteredData.length;
       const countElement = document.getElementById("count");
       countElement.innerText = count;
 
-      // Подготовка и построение графика
+    
       let chartData;
       if (selectedMonth) {
         chartData = countOccurrencesByCity(filteredData);
@@ -51,7 +50,7 @@ function countOccurrencesByCity(data) {
     return countByCity;
   }
   
-// Подсчет количества совпадений по месяцам
+
 function countOccurrencesByMonth(data) {
   const countByMonth = Array(12).fill(0);
   for (const item of data) {
@@ -62,7 +61,7 @@ function countOccurrencesByMonth(data) {
   return countByMonth;
 }
 
-// Отображение графика
+
 function renderChart(data, isByMonth) {
   let chartLabels;
   if (isByMonth) {
@@ -71,7 +70,6 @@ function renderChart(data, isByMonth) {
     chartLabels = Object.keys(data);
   }
 
-  // Если график уже был создан, удаляем его перед созданием нового
   if (chartInstance) {
     chartInstance.destroy();
   }
@@ -88,7 +86,7 @@ function countOccurrencesByCity(data) {
   return countByCity;
 }
 
-  // Создаем график с использованием Chart.js
+ 
   const ctx = document.getElementById("chart").getContext("2d");
   chartInstance = new Chart(ctx, {
     type: "bar",
@@ -98,8 +96,8 @@ function countOccurrencesByCity(data) {
         {
             label: "Number of alerts",
             data: Object.values(data),
-            backgroundColor: "rgba(0, 0, 139, 0.2)", // dark blue with opacity
-            borderColor: "rgba(0, 0, 139, 1)", // dark blue
+            backgroundColor: "rgba(0, 0, 139, 0.2)", 
+            borderColor: "rgba(0, 0, 139, 1)",
             borderWidth: 1,
         },
     ],
@@ -131,13 +129,13 @@ function countOccurrencesByCity(data) {
   });
 }
 
-let chartInstance = null; // Add this line at the top of your script
+let chartInstance = null; 
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const searchButton = document.getElementById("searchButton");
 
   searchButton.addEventListener("click", function(event) {
-    event.preventDefault(); // To prevent the form from being submitted if your button is inside a form
+    event.preventDefault();
     searchTime();
   });
 });

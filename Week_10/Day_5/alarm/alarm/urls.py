@@ -29,9 +29,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('messages/', views.messages_list, name='messages_list'),
     path('api/', include(router.urls)),
-    path('graph/', views.city_alerts_graph, name='city_alerts_graph'),
+    path('graph_city/', views.city_alerts_graph, name='city_alerts_graph'),
     path('graph_time/', views.time_alerts_graph, name='time_alerts_graph'),
     path('month_time/', views.month_alerts_graph, name='month_alerts_graph'),
+    path('index_alerts/', views.index_alerts_graph, name='index_alerts_graph'),
+
+
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

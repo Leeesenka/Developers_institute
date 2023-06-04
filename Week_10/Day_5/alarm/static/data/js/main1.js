@@ -1,21 +1,20 @@
+let chartInstance = null; 
 
 async function searchCity() {
-  const city2 = document.getElementById("city2").value.toLowerCase(); // Получаем значение введенное пользователем и приводим его к нижнему регистру
+  const city2 = document.getElementById("city2").value.toLowerCase();
 
   try {
     const response = await axios.get(`/api/messages`);
     const data = response.data;
  
-    const filteredData = data.filter(item => item.city2_english.toLowerCase().includes(city2)); // Фильтруем данные по частичному совпадению значения city2_english с введенным городом
+    const filteredData = data.filter(item => item.city2_english.toLowerCase().includes(city2));
 
-    // Выводим количество совпадений
     const count = filteredData.length;
     const countElement = document.getElementById("count");
     countElement.innerText = count;
 
-    // Выводим список городов
     const citiesElement = document.getElementById("cities");
-    citiesElement.innerHTML = ""; // Очищаем содержимое элемента перед выводом новых данных
+    citiesElement.innerHTML = "";
 
     filteredData.forEach(item => {
       const city = item.city2_english;
@@ -24,7 +23,6 @@ async function searchCity() {
       citiesElement.appendChild(cityElement);
     });
 
-    // Построение графика
     const chartData = countOccurrencesByDate(filteredData);
     renderChart(chartData);
   } catch (error) {
@@ -32,7 +30,6 @@ async function searchCity() {
   }
 }
 
-// Подсчет количества совпадений по датам
 function countOccurrencesByDate(data) {
   const countByDate = {};
   for (const item of data) {
@@ -42,20 +39,26 @@ function countOccurrencesByDate(data) {
   return countByDate;
 }
 
-// Отображение графика
+
 function renderChart(data) {
   const chartLabels = Object.keys(data);
   const chartData = Object.values(data);
 
-  // Создаем график с использованием Chart.js
   const ctx = document.getElementById("chart").getContext("2d");
-  new Chart(ctx, {
+
+
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+
+  
+  chartInstance = new Chart(ctx, {
     type: "bar",
     data: {
       labels: chartLabels,
       datasets: [
         {
-          label: "Количество совпадений",
+          label: "Number of alerts",
           data: chartData,
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
@@ -85,11 +88,10 @@ function renderChart(data) {
               }
           }
       }
-  }
+    }
   });
 }
 
 
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", searchCity);
-  
