@@ -1,0 +1,105 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="global">
+
+  <div class="main">
+  <h1>Time Alerts Graph</h1>
+   
+  <canvas id="chart"></canvas>
+  <div class="form">
+  
+  
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" class="form-control">
+    </div>
+  
+    <a title="See demos" id="searchButton" class="btn btn-primary btn-lg" role="button">
+      <span>Search</span>
+      <img src="{% static 'images/vecteezy_chart.png' %}" width="35px">
+    </a>
+  </div>
+  
+  <div class="data">
+    <p>Number of coincidences: <span id="count"></span></p>
+    <div id="cities"></div>
+    <div id="dates"></div>
+  </div>
+
+
+  <script src="{% static 'data/js/main.js' %}"></script>
+  <script src="{% static 'data/css/style_month.css' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+</div>
+</div>
+<style>
+  .form {
+    display: flex;
+  position: relative;
+  flex-direction: row;
+font-size: 30px;
+  }
+ .main {
+  display: flex;
+  position: relative;
+ width: 800px;
+ flex-direction: column;
+ height: 100%;
+ margin: 100px;
+ }
+  #startDate {
+  width: 150px;
+  margin: 20px;
+  height: 40px;
+}
+#endDate {
+  width: 150px;
+  margin: 20px;
+  height: 40px;
+}
+#searchButton {
+    color: #fff;
+    background-color: #1c75ba;
+    border-color: #1c75ba;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.5);
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex; 
+    font-size: 15px;
+    height: 45px;
+}
+#searchButton img {
+  margin-left: 7px;
+  margin-bottom: 7px;
+}  
+.global {
+  font-family: 'Abel', sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+  background-color: #2485d0;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+  
+ 
+}
+
+</style>
+{% endblock %}

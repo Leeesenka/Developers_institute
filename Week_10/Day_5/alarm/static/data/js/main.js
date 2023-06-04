@@ -1,34 +1,45 @@
 async function searchTime() {
-    const startDate = document.getElementById("startDate").value; // Получаем выбранную начальную дату
-    const endDate = document.getElementById("endDate").value; // Получаем выбранную конечную дату
-  
+  const startDate = new Date(document.getElementById("startDate").value); 
+  const endDate = new Date(document.getElementById("endDate").value); 
+
+
+  if (endDate < startDate) {
+      alert("The end date cannot be earlier than the start date!!");
+      return;
+  }
+
     try {
-      const response = await axios.get("/api/messages"); // Получаем все сообщения из API
+      const response = await axios.get("/api/messages"); 
       const data = response.data;
-      // Фильтруем данные по промежутку дат
+    
       const filteredData = data.filter(item => {
         const itemDate = new Date(item.date);
         return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
       });
   
-      // Выводим количество совпадений
+     
       const count = filteredData.length;
       const countElement = document.getElementById("count");
       countElement.innerText = count;
   
-      // Выводим список городов и дат
+     
       const citiesElement = document.getElementById("cities");
-      citiesElement.innerHTML = ""; // Очищаем содержимое элемента перед выводом новых данных
+      citiesElement.innerHTML = ""; 
   
       filteredData.forEach(item => {
         const city = item.city2_english;
         const date = item.date;
-        const cityElement = document.createElement("p");
-        cityElement.innerText = `${city} (${date})`;
-        citiesElement.appendChild(cityElement);
+      
+        const cityRow = document.createElement("tr"); 
+        const cityData = document.createElement("td");  
+        cityData.innerText = `${city} (${date})`; 
+        cityRow.appendChild(cityData); 
+      
+        citiesElement.appendChild(cityRow);  
       });
+      
   
-      // Построение графика
+     
       const chartData = countOccurrencesByCity(filteredData);
       renderChart(chartData);
     } catch (error) {
@@ -36,7 +47,7 @@ async function searchTime() {
     }
   }
   
-  // Подсчет количества совпадений по городам
+ 
   function countOccurrencesByCity(data) {
     const countByCity = {};
     console.log(countByCity)
@@ -46,24 +57,28 @@ async function searchTime() {
     }
     return countByCity;
   }
+  let myChart = null;
   
-  // Отображение графика
   function renderChart(data) {
     const chartLabels = Object.keys(data);
     const chartData = Object.values(data);
   
-    // Создаем график с использованием Chart.js
+   
     const ctx = document.getElementById("chart").getContext("2d");
-    new Chart(ctx, {
+    if (myChart) {
+      myChart.destroy();
+    }
+  
+    myChart = new Chart(ctx, {
       type: "bar",
       data: {
         labels: chartLabels,
         datasets: [
           {
-            label: "Количество совпадений",
+            label: "Number of alerts",
             data: chartData,
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: "rgba(0, 0, 139, 0.2)", 
+            borderColor: "rgba(0, 0, 139, 1)", 
             borderWidth: 1,
           },
         ],
@@ -71,14 +86,35 @@ async function searchTime() {
       options: {
         responsive: true,
         scales: {
-          y: {
-            beginAtZero: true,
-          },
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    color: "#ffffff" // White color
+                }
+            },
+            x: {
+                ticks: {
+                    color: "#ffffff" // White color
+                }
+            },
         },
-      },
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#ffffff' // White color
+                }
+            }
+        }
+    }
     });
   }
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const searchButton = document.getElementById("searchButton");
+    searchButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      searchTime();
+    });
+  });
   
-  const searchButton = document.getElementById("searchButton");
-  searchButton.addEventListener("click", searchTime);
+  
   

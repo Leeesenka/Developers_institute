@@ -1,0 +1,114 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="global">
+<div class="main">
+
+<h1>Monthly Alerts Graph</h1>
+
+<canvas id="chart"></canvas>
+<div class="forms">
+<select class="form-select" aria-label="Disabled select example" id="yearSelect">
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+    <!-- Add more options as needed -->
+  </select>
+  
+  <select id="monthSelect">
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+    <option value="12">None</option>
+  </select>
+
+
+  <!-- <button id="searchButton">Search</button> -->
+  <a title="See demos" id="searchButton" class="btn btn-primary btn-lg" role="button">
+    <span>Search</span> <!-- оберните текст в span -->
+    <img src="{% static 'images/vecteezy_chart.png' %}" width="35px">
+  </a>
+  
+</form>
+</div>
+<div id="container"></div>
+<p><b>Number of coincidences:</b> <span id="count"></span></p>
+<div id="cities"></div>
+<div id="dates"></div>
+</div>
+</div>
+</div>
+<style>
+  .global {
+  font-family: 'Abel', sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #2485d0;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+ 
+  
+ 
+}
+.main {
+  display: flex;
+  position: relative;
+ width: 800px;
+ flex-direction: column;
+
+
+ }
+.forms {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+#yearSelect {
+  width: 100px;
+  margin: 20px;
+  height: 40px;
+}
+#monthSelect {
+  width: 150px;
+  margin: 20px;
+  height: 40px;
+}
+#searchButton {
+    color: #fff;
+    background-color: #1c75ba;
+    border-color: #1c75ba;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.5);
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex; 
+    font-size: 15px;
+    height: 45px;
+}
+#searchButton img {
+  margin-left: 7px;
+  margin-bottom: 7px;
+}  
+
+</style>
+  <script src="{% static 'data/js/main2.js' %}"></script>
+  <script src="{% static 'data/css/style_month.css' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+{% endblock %}

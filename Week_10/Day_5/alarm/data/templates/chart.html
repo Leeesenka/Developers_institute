@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .search {
+        padding-top: 100px;
+    }
+</style>
+<div class="main">
+
+<div class="search">
+<form method="GET">
+    <input type="text" name="q" placeholder="Search city...">
+    <button type="submit">Search</button>
+</form>
+<select id="citySelect">
+</select>
+</div>
+<ul>
+    {% for message in messages %}
+    <li>
+        {{ message.date }} - {{ message.city }} - {{ message.city2_english }}
+        <!-- ... другие поля -->
+    </li>
+    {% empty %}
+    <li>No messages found.</li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}
+<script src='main.js'></script>
