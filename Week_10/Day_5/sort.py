@@ -10,13 +10,12 @@ def get_unique_cities():
             host='localhost',
             dbname='alarm',
             user='postgres',
-            password='Oi3msd4d907',
+            password='',
             port="5432"
         )
 
         cursor = connection.cursor()
 
-        # Fetch unique cities from city2 and city2_english
         cursor.execute("SELECT DISTINCT city2, city2_english FROM messages ORDER BY city2, city2_english;")
         rows = cursor.fetchall()
         

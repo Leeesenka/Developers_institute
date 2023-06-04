@@ -25,7 +25,7 @@ def insert_to_db(data):
             host='localhost',
             dbname='alarm',
             user='postgres',
-            password='Oi3msd4d907'
+            password=''
         )
         cursor = connection.cursor()
 
@@ -66,7 +66,7 @@ for message in messages:
     if data:  # If data was found
         insert_to_db(data)
 
-TOKEN = "6017048572:AAHdWXvMdL4lMUjbpDjulBxAUQ6djtsnFqg"
+TOKEN = ""
 URL = f"https://api.telegram.org/bot{TOKEN}/"
 
 def get_updates(offset=None):

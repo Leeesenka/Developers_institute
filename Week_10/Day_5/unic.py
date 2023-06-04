@@ -1,7 +1,7 @@
 import requests
 
 def get_coordinates(place_name):
-    api_key = 'AIzaSyAFWK2You1WXWC_0NeR3vH4L_HKROx_OJw'  # Замените на свой API-ключ Google Maps Geocoding API
+    api_key = ''  
     url = f'https://maps.googleapis.com/maps/api/geocode/json?address={place_name}&key={api_key}'
     
     response = requests.get(url)

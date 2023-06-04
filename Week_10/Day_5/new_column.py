@@ -11,7 +11,7 @@ def translate_cities():
             host='localhost',
             dbname='alarm',
             user='postgres',
-            password='Oi3msd4d907',
+            password='',
             port="5432"
         )
 
