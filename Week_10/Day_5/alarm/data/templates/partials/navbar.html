@@ -8,6 +8,7 @@
     text-transform: uppercase;
     padding: 8px 15px;
     font-size: 12px;
+    border-radius: 5px;
 }
 #two {
   color: #fff;
@@ -17,6 +18,7 @@
     text-transform: uppercase;
     padding: 8px 15px;
     font-size: 12px;
+    border-radius: 5px;
 }
 .navbar-brand a {
     margin-right: 15px;
@@ -30,12 +32,12 @@
       <div class="navbar-brand text-muted d-flex">
         <img src="{% static 'images/vecteezy_chart.png' %}" width="50px">
         <div>
-          <a title="See demos" id="two" href="{% url 'index_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Home Page</a>
-          <a title="See demos" id="two" href="{% url 'city_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">City Alerts</a>
-          <a title="See demos" id="one" href="{% url 'city_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">City Alerts</a>
-          <a title="See demos" id="one" href="{% url 'index_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Home Page</a>
-          <a title="See demos" id="one" href="{% url 'month_alerts_graph' %}" class="btn btn-primary btn-sm mr-3" role="button">Month Alerts</a>
-          <a title="See demos" id="one" href="{% url 'time_alerts_graph' %}" class="btn btn-primary btn-sm" role="button">Time Alerts</a>
+          <a title="See demos" id="two" href="{% url 'index_alerts_graph' %}"  role="button">Home Page</a>
+          <a title="See demos" id="two" href="{% url 'city_alerts_graph' %}"  role="button">City Alerts</a>
+          <a title="See demos" id="one" href="{% url 'city_alerts_graph' %}" role="button">City Alerts</a>
+          <a title="See demos" id="one" href="{% url 'index_alerts_graph' %}"  role="button">Home Page</a>
+          <a title="See demos" id="one" href="{% url 'month_alerts_graph' %}"  role="button">Month Alerts</a>
+          <a title="See demos" id="one" href="{% url 'time_alerts_graph' %}"  role="button">Time Alerts</a>
         </div>
   </div>
     </div>
