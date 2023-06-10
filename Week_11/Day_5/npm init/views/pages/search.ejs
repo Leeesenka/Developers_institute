@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+</head>
+<body>
+  <%- include('../partials/head.ejs') %>
+<%- include('../partials/header.ejs') %>
+
+<form action="/search/title" method="POST">
+  <input type="text" name="title" placeholder="Search by title">
+  <input type="submit" value="Search">
+</form>
+
+<form action="/search/category" method="POST">
+  <select name="category">
+    <% categories.forEach(category => { %>
+        <option value="<%= category %>"><%= category %></option>
+    <% }) %>
+  </select>
+  <input type="submit" value="Search">
+</form>
+
+
+<%- include('../partials/posts.ejs') %>
+<%- include('../partials/footer.ejs') %>
+
+</body>
+</html>
+
+
+
