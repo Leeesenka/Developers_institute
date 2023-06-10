@@ -1,9 +1,9 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const cors  = require('cors')
-const products_router =require('./routers/register.js')
+const reg_router =require('./routers/register.js')
 
-// const {db} = require('./config/db.js')
+
 
 const app = express()
 dotenv.config()
@@ -16,6 +16,6 @@ app.use('/', express.static(__dirname + '/public'))
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use(products_router.router)
+app.use(reg_router.router)
 
-  
+

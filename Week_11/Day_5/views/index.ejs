@@ -9,6 +9,7 @@
     <script src='main.js'></script>
 </head>
 <body>
+    <%= include('partials/headers') %>
     <h1>ELS is template engine</h1>
     <h1 style="color: purple">
     Hi <%= locals.user.firstName%> - <%=locals.user.lastName %>

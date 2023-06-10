@@ -1,14 +1,39 @@
 const {db} = require('../config/db.js')
 
 
-    const insertProduct = (username, password) =>{
+    const insertLogin = (data) =>{
         return db('login')
-        .insert(username, password)
+        .insert(data)
         .returning('*')
     }
- 
 
+    const insertRegister = (data) =>{
+        return db('register')
+        .insert(data)
+        .returning('*')
+    }
+
+    const getAllProfiles = () =>{
+        return db('register')
+        .select('*')
+    }
+    const getAllLogin = () =>{
+        return db('login')
+        .select('*')
+    }
+ 
+    const getUserByUsername = (username) => {
+        return db('login')
+          .select('*')
+          .where({ username })
+          .first();
+      };
+      
 
 module.exports = {
-    insertProduct
+    insertLogin,
+    insertRegister,
+    getAllProfiles, 
+    getAllLogin,
+    getUserByUsername
 }

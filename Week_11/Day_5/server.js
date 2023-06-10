@@ -29,3 +29,7 @@ app.get('/', (req, res)=>{
         student
     })
 })
+
+app.get('/shop', (req, res)=>{
+    res.render()
+})
