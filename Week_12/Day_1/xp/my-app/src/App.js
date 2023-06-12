@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { ReactDOM } from "react";
-// import Love from './Love'
+import Love from './Love'
 // import UserFavoriteAnimals from './UserFavoriteAnimals';
 import Exercise4 from './Exercise4'
 
@@ -22,8 +22,8 @@ function App() {
               <h3>{user.lastName}</h3>
               <UserFavoriteAnimals favAnimals = {user.favAnimals} /> */}
                
-              {/* /* <Love />
-              <h2>React is <Love /> times better with JSX</h2>  */ }
+              <Love />
+              <h2>React is <Love /> times better with JSX</h2> 
           
             
             </header>
