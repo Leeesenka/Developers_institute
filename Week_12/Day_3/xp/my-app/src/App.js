@@ -64,19 +64,20 @@
 // export default App;
 
 
-import Color from './components/Color';
-import './App.css';
+// import Color from './components/Color';
+// import './App.css';
 
-function App() {
-  return (
-    <div>
-      <header>
-      <Color />
-      {/* <Child/> */}
-      </header>
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <header>
+//       <Color />
+//       {/* <Child/> */}
+//       </header>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+
 
