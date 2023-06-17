@@ -1,0 +1,51 @@
+#root {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+
+.text {
+ 
+    width: 40%;
+    height: 250px;
+    border-radius: 10px;
+    margin: 100px auto 0;
+    text-align: center;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+body {
+    background-color: #F5F5F5;
+}
+
+h1 {
+    font-size: 60px;
+    color: 	#0000FF;
+}
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+
+
+
+.collection-item {
+    background-color: #fff;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid 	#B0C4DE;
+}
