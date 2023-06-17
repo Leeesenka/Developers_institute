@@ -1,0 +1,49 @@
+*{
+    margin: 0%;
+}
+.superheroes-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .superhero-card {
+    width: 250px;
+    height: 400px;
+    margin: 50px;
+    text-align: center;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+  
+
+  }
+.superhero-card img {
+    margin-top: 10px;
+}
+.phrase {
+   
+    background: linear-gradient(to left top,#00f,red) 50% fixed;
+    background-size: cover;
+   
+    height: 50px;
+   
+
+}
+.phrase h3 {
+    color: #fff;
+    text-shadow: 0.25px 0.25px 0.25px #000;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    background-color: red;
+    height: 60px;
+    align-items: center;
+}
