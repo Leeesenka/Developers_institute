@@ -9,7 +9,7 @@ class MovieDetails extends React.Component {
     return (
       <div>
         <h3>Details for:</h3>
-
+        <p>Title: {this.props.selectedMovie.title}</p>
         <p>Release Date: {this.props.selectedMovie.releaseDate}</p>
         <p>Rating: {this.props.selectedMovie.rating}</p>
       </div>
