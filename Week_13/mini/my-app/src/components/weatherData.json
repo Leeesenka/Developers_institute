@@ -1,0 +1,152 @@
+[
+    {
+        “Version”: 1,
+        “Key”: “294021”,
+        “Type”: “City”,
+        “Rank”: 10,
+        “LocalizedName”: “Moscow”,
+        “Country”: {
+            “ID”: “RU”,
+            “LocalizedName”: “Russia”
+        },
+        “AdministrativeArea”: {
+            “ID”: “MOW”,
+            “LocalizedName”: “Moscow”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “35168”,
+        “Type”: “City”,
+        “Rank”: 65,
+        “LocalizedName”: “Moscari”,
+        “Country”: {
+            “ID”: “BO”,
+            “LocalizedName”: “Bolivia”
+        },
+        “AdministrativeArea”: {
+            “ID”: “P”,
+            “LocalizedName”: “Potosí”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “263254”,
+        “Type”: “City”,
+        “Rank”: 65,
+        “LocalizedName”: “Mosca”,
+        “Country”: {
+            “ID”: “PE”,
+            “LocalizedName”: “Peru”
+        },
+        “AdministrativeArea”: {
+            “ID”: “HUC”,
+            “LocalizedName”: “Huánuco”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “274014”,
+        “Type”: “City”,
+        “Rank”: 65,
+        “LocalizedName”: “Moscavide”,
+        “Country”: {
+            “ID”: “PT”,
+            “LocalizedName”: “Portugal”
+        },
+        “AdministrativeArea”: {
+            “ID”: “11",
+            “LocalizedName”: “Lisboa”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “332633”,
+        “Type”: “City”,
+        “Rank”: 65,
+        “LocalizedName”: “Moscow”,
+        “Country”: {
+            “ID”: “US”,
+            “LocalizedName”: “United States”
+        },
+        “AdministrativeArea”: {
+            “ID”: “ID”,
+            “LocalizedName”: “Idaho”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “114763”,
+        “Type”: “City”,
+        “Rank”: 75,
+        “LocalizedName”: “Mosca”,
+        “Country”: {
+            “ID”: “CR”,
+            “LocalizedName”: “Costa Rica”
+        },
+        “AdministrativeArea”: {
+            “ID”: “P”,
+            “LocalizedName”: “Puntarenas”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “115579”,
+        “Type”: “City”,
+        “Rank”: 75,
+        “LocalizedName”: “Moscenica”,
+        “Country”: {
+            “ID”: “HR”,
+            “LocalizedName”: “Croatia”
+        },
+        “AdministrativeArea”: {
+            “ID”: “03",
+            “LocalizedName”: “Sisak-Moslavina”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “114618”,
+        “Type”: “City”,
+        “Rank”: 75,
+        “LocalizedName”: “Moscenice”,
+        “Country”: {
+            “ID”: “HR”,
+            “LocalizedName”: “Croatia”
+        },
+        “AdministrativeArea”: {
+            “ID”: “08",
+            “LocalizedName”: “Primorje-Gorski Kotar”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “114619”,
+        “Type”: “City”,
+        “Rank”: 75,
+        “LocalizedName”: “Moscenicka Draga”,
+        “Country”: {
+            “ID”: “HR”,
+            “LocalizedName”: “Croatia”
+        },
+        “AdministrativeArea”: {
+            “ID”: “08",
+            “LocalizedName”: “Primorje-Gorski Kotar”
+        }
+    },
+    {
+        “Version”: 1,
+        “Key”: “272439”,
+        “Type”: “City”,
+        “Rank”: 75,
+        “LocalizedName”: “Mosca”,
+        “Country”: {
+            “ID”: “PT”,
+            “LocalizedName”: “Portugal”
+        },
+        “AdministrativeArea”: {
+            “ID”: “04",
+            “LocalizedName”: “Bragança”
+        }
+    }
+]

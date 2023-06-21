@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Counter/>
+    <div className="App" style={{marginTop: '50px'}}>
+      <h2><Counter/></h2>
     </div>
   );
 }
