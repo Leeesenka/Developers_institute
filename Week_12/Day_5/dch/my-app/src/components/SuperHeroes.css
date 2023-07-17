@@ -7,7 +7,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  
+  .score {
+    margin-right: 10px;
+  }
   .superhero-card {
     width: 250px;
     height: 400px;
@@ -46,4 +48,5 @@ nav {
     background-color: red;
     height: 60px;
     align-items: center;
+ 
 }

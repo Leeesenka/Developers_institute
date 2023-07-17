@@ -1,33 +1,36 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCheck, faStar} from '@fortawesome/free-solid-svg-icons'
-import React, { useState } from "react";
+import { useState } from "react";
+import React from 'react'
 import firstPhoto from './contest-hero.png'
 import myPhoto from './my_photo.jpeg'
-import skills from './GroupSkills.png'
+import skills from './Group 6.png'
 import contImage from './con.avif'
 import Nikolas from './Nikolas-Weber.jpeg'
 import Maksim from './Maksim-Chalov.jpeg'
 import Elena from './Elena-Chuvilina.jpeg'
 import Sergey from './Sergei-Boiko.jpeg'
 import Icone from './Icone.png'
-import Tor from './tor.png'
-import Shop from './shop.png'
-import Sea from './sea.png'
-import Simps from './photoS.png'
-import final from './FinalProject.png'
+import Heroes from './Superheroes.png'
 
-import ImageGallery from 'react-image-gallery';
+import Shop from './shop.png'
+import pdf from './Alesya_Frolova_CV.pdf'
+import Sea from './sea.png'
+
+import final from './FinalProject.png'
+import myCV from './ScrinCV.png'
+import hotel from './hotel.png'
+import alarm from './alarm.png'
+import ImageGallery from 'react-image-gallery'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+
+import emailjs from 'emailjs-com';
 // import CSS from './CSS.png'
 // import GitHub from './GitHub.png'
 // import HTML from './HTML.png'
 // import Reactt from './React.png'
 import { faFacebook, faSquareInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-
-
-
 
 
 const Header = () => {
@@ -43,18 +46,19 @@ const Header = () => {
                     <ul className="menu__box">
                         <li><a className="menu__item" href="#About">About me</a></li>
                         <li><a className="menu__item" href="#Skills">Skills</a></li>
+                        <li><a className="menu__item" href="#CV">CV</a></li>
                         <li><a className="menu__item" href="#Projects">Projects</a></li>
                         <li><a className="menu__item" href="#Team">Team</a></li>
-                        <li><a className="menu__item" href="#">Blog</a></li>
                         <li><a className="menu__item" href="#Contacts">Contacts</a></li>
                     </ul>
                 </div>
                 <div className="site-header__inner2">
                     <a className="menu__item" href="#About">About me</a>
                     <a className="menu__item" href="#Skills">Skills</a>
+                    <a className="menu__item" href="#CV">CV</a>
                     <a className="menu__item" href="#Projects">Projects</a>
                     <a className="menu__item" href="#Team">Team</a>
-                    <a className="menu__item" href="#">Blog</a>
+              
                     <a className="menu__item" href="#Contacts">Contacts</a>
                     <div className="top-level-nav__item">
                         <i className="fa fa-phone" aria-hidden="true"></i>
@@ -81,11 +85,12 @@ const Header = () => {
                 </p>
                 <ul className="list_1">
                     <li> <FontAwesomeIcon icon={faCheck}/>About me</li>
-                    <li> <FontAwesomeIcon icon={faCheck}/>VC</li>
                     <li> <FontAwesomeIcon icon={faCheck}/>My skills</li>
+                    <li> <FontAwesomeIcon icon={faCheck}/>CV</li>
+                    
                     <li> <FontAwesomeIcon icon={faCheck}/>My Projects</li>   
                     <li> <FontAwesomeIcon icon={faCheck}/>My Team</li>   
-                    <li> <FontAwesomeIcon icon={faCheck}/>My Blog</li>   
+                    <li> <FontAwesomeIcon icon={faCheck}/>My contacts</li>   
                 </ul>
                 <span className="button_1">
                     <a href="#About">See more</a>
@@ -113,7 +118,7 @@ const AboutMe = () => {
             <h1 id="About">About Me</h1>
             <div className="info">
                 <div className="photo-my">
-                    {/* <img src="5K0A9068.jpeg"> */}
+              
                     <img src={myPhoto} alt="My profile" />
                 </div>
                 <div className="info-me">
@@ -130,54 +135,71 @@ const AboutMe = () => {
 };
 
 const Projects = () => {
-
     const images = [
-        {
-            original: Tor,
-            thumbnail: Tor,
-            originalClass: 'my-original-class',
-        },
         {
             original: Sea,
             thumbnail: Sea,
             originalClass: 'my-original-class',
-        },
-        {
-            original: Simps,
-            thumbnail: Simps,
-            originalClass: 'my-original-class',
+            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_1/Day_1/Create_Your_First%20HTML_Page',
         },
         {
             original: Shop,
             thumbnail: Shop,
             originalClass: 'my-original-class',
+            originalUrl: 'https://github.com/Leeesenka/Developers_institute/tree/main/Week_1/Day_2',
         },
         {
             original: final,
             thumbnail: final,
             originalClass: 'my-original-class',
+            originalUrl:'https://fms-support-client.onrender.com/'
         },
         {
-            original: Shop,
-            thumbnail: Shop,
+            original: hotel,
+            thumbnail: hotel,
             originalClass: 'my-original-class',
+            originalUrl:'https://github.com/Leeesenka/Mini_Project_Hotel_Torquay'
         },
         {
-            original: Shop,
-            thumbnail: Shop,
+            original: alarm,
+            thumbnail: alarm,
             originalClass: 'my-original-class',
+            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_10/Day_5/alarm'
         },
-        // Add more images as required
+      
+        {
+            original:   Heroes,
+            thumbnail:   Heroes,
+            originalClass: 'my-original-class',
+            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_12/Day_5/dch/my-app'
+        },
     ];
+
+    const renderItem = (item) => {
+        return (
+            <div className='image-gallery-image'>
+                <a href={item.originalUrl} target='_blank' rel='noopener noreferrer'>
+                    {/* add CSS here to limit the size of images */}
+                    <img src={item.original} alt='' style={{maxWidth: "100%", maxHeight: "100%"}} />
+                    {item.description && (
+                        <span className='image-gallery-description'>
+                            {item.description}
+                        </span>
+                    )}
+                </a>
+            </div>
+        );
+    }
 
     return (
         <div className="app__content2">
-            <h1 id="About">My Projects</h1>
+            <h1 id="Projects">My Projects</h1>
             <div className="uder-lenta">
                 <ImageGallery items={images} 
                               showFullscreenButton={true}
                               showPlayButton={false}
-                              showBullets={true} />
+                              showBullets={true}
+                              renderItem={renderItem}  />
             </div>
         </div>
     );
@@ -185,10 +207,12 @@ const Projects = () => {
 
 
 
+
+
 const Skills = () => {
     return (
         <div className="my_skills">
-            <h1 id="About">My Skills</h1>
+            <h1 id="Skills">My Skills</h1>
             <div className='skills'>
                     <img src={skills }></img>
                     {/* <img src={skills} id='main-skills' alt="skills" />
@@ -202,14 +226,16 @@ const Skills = () => {
     );
 };
 
-const CV =()=> {
-    return(
-        <div className='cv-photo'>
-            <embed src="path/to/your/file.pdf" type="application/pdf" width="100%" height="600px" />
-
-        </div>
+const CV = () => {
+    return (
+      <div className='cv-photo'>
+        <h1 id="CV">My CV</h1>
+        <a href={pdf} download>
+          <img src={myCV}  width="20%"/>
+        </a>
+      </div>
     )
-}
+  }
 
 
 const Team = () => {
@@ -217,13 +243,13 @@ const Team = () => {
         <div className="team">
             <h1><a name ="Team"></a>Our course Team</h1>
             <div className="text-team">
-                <span className="button_2">
+                {/* <span className="button_2">
                     <a href="NEW">NEW</a>
-                </span>
+                </span> */}
                 <b>This is my crazy team</b>
                 <h2>Teamwork is everything to a company. Teammates are everything to each other.</h2>
-                <p>Team building slogans, also commonly called team mottos, are catchy phrases that summarize a team’s spirit, mission, or character. Leaders often use slogans to motivate and inspire teams.
-                </p>
+                {/* <p>Team building slogans, also commonly called team mottos, are catchy phrases that summarize a team’s spirit, mission, or character. Leaders often use slogans to motivate and inspire teams.
+                </p> */}
             </div>
             <div className="team-photo">
                 <div className="photo1">
@@ -277,24 +303,18 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const response = await fetch("/send", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-        const data = await response.json();
-        if (data.status === "success") {
-            alert("Message Sent.");
-            setName("");
-            setEmail("");
-            setMessage("");
-        } else if(data.status === "fail") {
-            alert("Message failed to send.")
-        }
+        
+        emailjs.send('service_v8r5b09', 'template_8ihy9ry', { name, email, message }, '0hDVoZjDf_j8gpHY_')
+            .then((result) => {
+                alert("Message Sent, We will get back to you shortly");
+                setName("");
+                setEmail("");
+                setMessage("");
+            }, (error) => {
+                alert("An error occurred, Please try again");
+            });
     };
 
     return (
@@ -312,10 +332,18 @@ const Contact = () => {
             {/* I removed 'contImage' from the img src as it's not defined in the provided code, replace it with your actual image */}
             <div className="cont-photo">
                 <div className="cont-ik">
-                    <FontAwesomeIcon icon={faFacebook} id='facebook'/>
+                <a href="https://www.facebook.com/profile.php?id=100082443499131" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faFacebook} id='facebook' />
+                </a>
+                <a href="https://instagram.com/leeesenka?igshid=MTIzZWMxMTBkOA==" target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faSquareInstagram} id='instagram' />
+                </a>
+                <a href="https://www.linkedin.com/in/alesya-frolova/" target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} id='linedin'/>
+                </a> 
+                <a href="https://github.com/Leeesenka" target="_blank" rel="noreferrer">  
                     <FontAwesomeIcon icon={faGithub} id='git' />
+                </a>     
                 </div>
                 <img src={contImage} width="350px" alt="Contact"/>
             </div>

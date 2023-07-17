@@ -413,7 +413,7 @@ font-size: 16px;
   
 }
 
-#About {
+#About, #Skills, #Projects, #CV {
   font-size: 45px;
 }
 
@@ -612,6 +612,7 @@ align-items: center;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  
  
 
 }
@@ -620,21 +621,7 @@ align-items: center;
 text-align: right;
 margin-left: 30px;
 }
-/* .cont-ik  {
-  color: white;
-  font-size: 45px;
-  padding-left: 10px;
-  text-align: center;
-  margin: 20px;
-  
-} */
-/* 
-.cont-ik {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-margin: 10px;
-} */
+
 #facebook, #instagram, #linedin, #git {
   color: white;
   font-size: 45px;
